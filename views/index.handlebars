@@ -1,0 +1,23 @@
+<div class="container text-center">
+    <h1>Eat-Da-Burger!</h1>
+    <div class="row">
+        <ul id="not-eaten" class="col-lg-4 float-left">
+            {{#each burgers}}
+                <li>
+                    <p><span class="label">Burger:</span>{{this.burger_name}} <button data-id="{{this.id}}" class="devour-burger btn">Devour it!</button></p>                    
+                </li>
+            {{/each}}
+        </ul>
+        <ul id="eaten" class="col-lg-6"></ul>
+    </div>
+    
+    <ul id="eaten">
+        
+    </ul>
+
+    <form class="create-form">
+        <textarea name="burger-name" id="burger-name" cols="30" rows="10"></textarea>
+        <br>
+        <button id="submit" class="btn">Submit</button>
+    </form>
+</div>

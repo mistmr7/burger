@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(226, 187, 10);
+}
+
+li {
+    color: black;
+    font-size: 16px;
+    background-color: white;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.btn {
+    background-color: purple;
+    color: rgb(226, 187, 10)
+}

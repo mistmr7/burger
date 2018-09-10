@@ -1,4 +1,4 @@
-let connection = require('../config/connection.js')
+let connection = require('../config/connection')
 
 function printQuestionMarks(num) {
     let arr = []
@@ -27,7 +27,8 @@ function objToSql(ob) {
 
 let orm = {
     all: function (tableInput, cb) {
-        let queryString = 'SELECT * FROM' + tableInput + ';'
+        let queryString = 'SELECT * FROM ' + tableInput + ';'
+        console.log(queryString)
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw new Error('Error occurred calling ALL orm', err)
@@ -39,7 +40,7 @@ let orm = {
     create: function(table, cols, vals, cb) {
         let queryString = 'INSERT INTO ' + table;
         queryString += ' (' + cols.toString + ') '
-        queryString += 'VALUES (' + printQuestionMarsk(vals.length) + ');'
+        queryString += 'VALUES (' + printQuestionMarks(vals.length) + ');'
         
         console.log(queryString)
 
