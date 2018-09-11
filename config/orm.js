@@ -32,7 +32,9 @@ function objToSql(ob) {
     return arr.toString();
   }
 
+  // Define the orm
 let orm = {
+    // SELECT all query
     all: function (tableInput, cb) {
         let queryString = 'SELECT * FROM ' + tableInput + ';'
         console.log(queryString)
@@ -43,7 +45,8 @@ let orm = {
                 cb(result)
             }
         })
-    }, 
+    },
+    // Add values to a table 
     create: function(table, cols, vals, cb) {
         let queryString = "INSERT INTO " + table;
     
@@ -63,6 +66,7 @@ let orm = {
           cb(result);
         });
       },
+      // Update a table
       update: function(table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
     
@@ -80,6 +84,7 @@ let orm = {
           cb(result);
         });
       },
+      // Delete values from a table
     delete: (table, condition, cb) => {
         let queryString = 'DELETE FROM ' + table
         queryString += ' WHERE ' + condition + ';'

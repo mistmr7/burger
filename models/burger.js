@@ -1,5 +1,7 @@
+// Require the orm created earlier
 let orm = require('../config/orm')
 
+// Make a new object that will call the burgers table for the orm created
 let burger = {
     all: ((cb) => {
         orm.all('burgers', function(res) {
@@ -24,5 +26,5 @@ let burger = {
 
 }
 
-
+// Export the object
 module.exports = burger
