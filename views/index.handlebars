@@ -2,22 +2,32 @@
     <h1>Eat-Da-Burger!</h1>
     <div class="row">
         <ul id="not-eaten" class="col-lg-4 float-left">
+            <h2>Burgers to devour!</h2>
             {{#each burgers}}
+                {{#unless devoured}}
                 <li>
-                    <p><span class="label">Burger:</span>{{this.burger_name}} <button data-id="{{this.id}}" class="devour-burger btn">Devour it!</button></p>                    
+                    <span class="label">Burger:</span> {{this.burger_name}} <button data-id="{{this.id}}" data-devoured="{{this.devoured}}" class="devour-burger btn">Devour it!</button>                    
                 </li>
+                {{/unless}}
             {{/each}}
         </ul>
-        <ul id="eaten" class="col-lg-6"></ul>
+        <img src="/assets/img/burger.jpg" alt="" class="col-lg-4">
+        <ul id="eaten" class="col-lg-4">
+            <h2>Burgers already consumed</h2>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li>
+                        <span class="label">Burger:</span> {{this.burger_name}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
     </div>
-    
-    <ul id="eaten">
-        
-    </ul>
 
     <form class="create-form">
-        <textarea name="burger-name" id="burger-name" cols="30" rows="10"></textarea>
+        <textarea name="burger_name" id="burger-name" cols="30" rows="3"></textarea>
         <br>
         <button id="submit" class="btn">Submit</button>
     </form>
+    <p>Enter a burger you want to eat. Click the 'Submit' button.</p>
 </div>

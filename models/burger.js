@@ -6,12 +6,12 @@ let burger = {
             cb(res)
         })
     }),
-    create: ((cols, vals, cb) => {
+    create: (function(cols, vals, cb) {
         orm.create('burgers', cols, vals, (res) => {
             cb(res)
         })
     }),
-    update: ((objColVals, condition, cb) => {
+    update: (function(objColVals, condition, cb) {
         orm.update('burgers', objColVals, condition, (res) => {
             cb(res)
         })
